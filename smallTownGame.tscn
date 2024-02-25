@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://c837d6kuh1562"]
+
+[ext_resource type="PackedScene" uid="uid://dkcfwq1mfmle5" path="res://player.tscn" id="1_vlhix"]
+[ext_resource type="Texture2D" uid="uid://bkqn6sju1jd2y" path="res://icon.svg" id="2_rgwym"]
+[ext_resource type="PackedScene" uid="uid://dyy4c5hqy4fmw" path="res://rock.tscn" id="3_iuk5q"]
+[ext_resource type="PackedScene" uid="uid://djsd5yi1sata6" path="res://switch.tscn" id="4_a8vak"]
+[ext_resource type="PackedScene" uid="uid://0ec6uwultiml" path="res://door.tscn" id="5_roguc"]
+[ext_resource type="PackedScene" uid="uid://biuhb3kjabafr" path="res://jewel.tscn" id="6_e7rfi"]
+[ext_resource type="Script" path="res://jewel.gd" id="7_cs1cr"]
+[ext_resource type="AudioStream" uid="uid://pt45xhnv15l2" path="res://JEWELGET.wav" id="8_e2pla"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 464.0
+offset_bottom = 306.0
+scale = Vector2(2.5206, 2.1824)
+
+[node name="Switch" parent="." instance=ExtResource("4_a8vak")]
+position = Vector2(0, -283)
+scale = Vector2(4.1489, 4.1489)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rgwym")
+
+[node name="Player" parent="." instance=ExtResource("1_vlhix")]
+y_sort_enabled = true
+
+[node name="Rock" parent="." instance=ExtResource("3_iuk5q")]
+
+[node name="Door" parent="." instance=ExtResource("5_roguc")]
+position = Vector2(224, -7.00006)
+scale = Vector2(3.59532, 3.59532)
+
+[node name="Jewel" parent="." instance=ExtResource("6_e7rfi")]
+position = Vector2(222, -11)
+scale = Vector2(0.235214, 0.234378)
+script = ExtResource("7_cs1cr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["AudioPlayerJewel"]]
+stream = ExtResource("8_e2pla")

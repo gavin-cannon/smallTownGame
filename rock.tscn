@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyy4c5hqy4fmw"]
+
+[ext_resource type="Texture2D" uid="uid://nnvhb8dvy3v8" path="res://pngtree-cartoon-rock-transparent-png-image_6122807.png" id="1_gi0bb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3brs"]
+
+[node name="Rock" type="RigidBody2D" groups=["Rock"]]
+position = Vector2(-6, -159)
+gravity_scale = 0.0
+continuous_cd = 1
+linear_damp = 25.0
+angular_damp = 25.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2(3.60883, 3.60883)
+shape = SubResource("RectangleShape2D_q3brs")
+
+[node name="Pngtree-cartoon-rock-transparent-png-image6122807" type="Sprite2D" parent="CollisionShape2D2"]
+scale = Vector2(0.0573624, 0.0573624)
+texture = ExtResource("1_gi0bb")

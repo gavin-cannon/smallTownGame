@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://biuhb3kjabafr"]
+
+[ext_resource type="Texture2D" uid="uid://ba17725okel03" path="res://spr_coin_roj.png" id="1_dx4nj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcdpx"]
+atlas = ExtResource("1_dx4nj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6yqn"]
+atlas = ExtResource("1_dx4nj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hivel"]
+atlas = ExtResource("1_dx4nj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8osdt"]
+atlas = ExtResource("1_dx4nj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enwde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcdpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6yqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hivel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8osdt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_joeiy"]
+height = 29.5123
+
+[node name="Jewel" type="Area2D" groups=["Jewel"]]
+scale = Vector2(0.361465, 0.361465)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(34.3913, 34.3913)
+sprite_frames = SubResource("SpriteFrames_enwde")
+frame_progress = 0.549343
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -3.14159
+scale = Vector2(18.1339, -19.7537)
+shape = SubResource("CapsuleShape2D_joeiy")
